@@ -30,6 +30,7 @@ modes/_profile.md
 .resolved-prompt-*
 node_modules/
 bun.lock
+web-dashboard/logs/
 
 # OS
 .DS_Store

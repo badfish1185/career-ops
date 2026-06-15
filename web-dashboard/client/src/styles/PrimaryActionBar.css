@@ -1,0 +1,129 @@
+.primary-action-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, auto);
+  gap: 12px;
+  align-items: center;
+  isolation: isolate;
+}
+
+.primary-action-bar__body {
+  min-width: 0;
+}
+
+.primary-action-bar strong,
+.primary-action-bar span {
+  display: block;
+  min-width: 0;
+}
+
+.primary-action-bar strong {
+  overflow: hidden;
+  color: #172033;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.primary-action-bar span {
+  margin-top: 4px;
+  overflow: hidden;
+  color: #526071;
+  line-height: 1.38;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.primary-action-bar__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.primary-action-bar__meta small {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 4px 7px;
+  border: 1px solid #d7e0ec;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #4c5b6f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.primary-action-bar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .primary-action-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .primary-action-bar__actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 620px) {
+  .primary-action-bar {
+    position: sticky;
+    bottom: calc(78px + env(safe-area-inset-bottom));
+    z-index: 18;
+    padding: 12px;
+    border: 1px solid rgba(181, 196, 216, 0.92);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.14);
+    backdrop-filter: blur(12px);
+  }
+
+  .primary-action-bar strong,
+  .primary-action-bar span {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .primary-action-bar strong {
+    font-size: 0.98rem;
+  }
+
+  .primary-action-bar span {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .primary-action-bar__meta small {
+    font-size: 0.69rem;
+  }
+
+  .primary-action-bar__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .primary-action-bar__actions .button-primary,
+  .primary-action-bar__actions .button-secondary {
+    min-height: 44px;
+    width: 100%;
+  }
+}
+
+@supports not (backdrop-filter: blur(12px)) {
+  @media (max-width: 620px) {
+    .primary-action-bar {
+      background: #ffffff;
+    }
+  }
+}

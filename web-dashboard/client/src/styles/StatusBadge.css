@@ -1,0 +1,40 @@
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-evaluated,
+.status-responded {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.status-applied {
+  background-color: #f3e8ff;
+  color: #6b21a8;
+}
+
+.status-interview {
+  background-color: #ffedd5;
+  color: #9a3412;
+}
+
+.status-offer {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.status-skip,
+.status-discarded {
+  background-color: #f3f4f6;
+  color: #374151;
+}

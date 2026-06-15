@@ -1,0 +1,245 @@
+.disposition-dock {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+  border: 1px solid #d9e2ee;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+.disposition-dock__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+}
+
+.disposition-dock__header span {
+  color: #596477;
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+.disposition-dock__header h3 {
+  margin-top: 2px;
+  color: #111827;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.disposition-dock__header p {
+  max-width: 64ch;
+  margin-top: 4px;
+  color: #5b6472;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.disposition-dock__review {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px;
+  color: #253044;
+  background: #ffffff;
+  border: 1px solid #d5dde9;
+  border-radius: 7px;
+  font-size: 0.78rem;
+  font-weight: 850;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.disposition-dock__review:hover {
+  border-color: #9fb2cc;
+  transform: translateY(-1px);
+}
+
+.disposition-dock__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.disposition-dock__action {
+  min-width: 0;
+  min-height: 78px;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  padding: 10px;
+  color: #263043;
+  background: #ffffff;
+  border: 1px solid #d8e1ec;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.disposition-dock__action:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: #93a8c3;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+.disposition-dock__action:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.disposition-dock__action:disabled {
+  cursor: progress;
+  opacity: 0.72;
+}
+
+.disposition-dock__icon {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #445066;
+  background: #f1f5f9;
+  border-radius: 7px;
+}
+
+.disposition-dock__action strong {
+  display: block;
+  color: #111827;
+  font-size: 0.88rem;
+  line-height: 1.1;
+}
+
+.disposition-dock__action small {
+  display: block;
+  margin-top: 3px;
+  color: #657083;
+  font-size: 0.74rem;
+  line-height: 1.25;
+}
+
+.disposition-dock__action em {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  padding: 3px 6px;
+  color: #174572;
+  background: #e9f2ff;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 850;
+}
+
+.disposition-dock__action.tone-stop .disposition-dock__icon,
+.disposition-dock__action.tone-archive .disposition-dock__icon {
+  color: #9a3d26;
+  background: #fff0eb;
+}
+
+.disposition-dock__action.tone-go .disposition-dock__icon {
+  color: #0d7653;
+  background: #e7f8ef;
+}
+
+.disposition-dock__action.tone-watch .disposition-dock__icon {
+  color: #174572;
+  background: #e9f2ff;
+}
+
+.disposition-dock__action.is-current {
+  border-color: #2f6fed;
+  background: #f5f9ff;
+  box-shadow: inset 0 0 0 1px rgba(47, 111, 237, 0.18);
+}
+
+.disposition-dock__message {
+  margin: 0;
+  color: #29523f;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.is-spinning {
+  animation: disposition-spin 900ms linear infinite;
+}
+
+@keyframes disposition-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disposition-dock__action,
+  .disposition-dock__review {
+    transition: none;
+  }
+
+  .disposition-dock__action:hover:not(:disabled),
+  .disposition-dock__review:hover {
+    transform: none;
+  }
+
+  .is-spinning {
+    animation: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .disposition-dock {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .disposition-dock__header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .disposition-dock__header span {
+    display: none;
+  }
+
+  .disposition-dock__header h3 {
+    margin-top: 0;
+  }
+
+  .disposition-dock__header p {
+    display: none;
+  }
+
+  .disposition-dock__review {
+    min-height: 32px;
+    width: auto;
+    padding: 0 8px;
+  }
+
+  .disposition-dock__grid {
+    order: -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .disposition-dock__action {
+    min-height: 70px;
+    padding: 9px;
+  }
+}
+
+@media (max-width: 420px) {
+  .disposition-dock__action {
+    grid-template-columns: 26px minmax(0, 1fr);
+  }
+
+  .disposition-dock__icon {
+    width: 26px;
+    height: 26px;
+  }
+}

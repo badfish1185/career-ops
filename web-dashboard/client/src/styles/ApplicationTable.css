@@ -1,0 +1,86 @@
+.application-table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.application-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.application-table thead {
+  background-color: #f9fafb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.application-table th {
+  padding: 12px 20px;
+  font-weight: 600;
+  color: #4b5563;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 11px;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.application-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #4b5563;
+  vertical-align: middle;
+}
+
+.application-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.application-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.application-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.application-table tbody tr:nth-child(even) {
+  background-color: #fbfcfd;
+}
+
+.company-cell {
+  font-weight: 600;
+  color: #111827 !important;
+}
+
+.score-pill {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+  font-weight: 600;
+  color: #059669;
+  background-color: #ecfdf5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.pdf-cell {
+  text-align: center;
+}
+
+.pdf-icon {
+  color: #ef4444;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.pdf-icon:hover {
+  transform: scale(1.1);
+}
